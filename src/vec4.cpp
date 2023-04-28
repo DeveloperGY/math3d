@@ -2,13 +2,16 @@
 
 // C++
 
-m3::Vec3::Vec3()
+m3::vec4::vec4()
 {
     this->data[0] = 0;
     this->data[1] = 0;
     this->data[2] = 0;
+    this->data[3] = 0;
     return;
 }
+
+
 
 
 // C
