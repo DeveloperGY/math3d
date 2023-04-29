@@ -1,3 +1,6 @@
+title: Math3d
+description: Document the math3d library
+
 remote_theme: pages-themes/cayman@v0.2.0
 plugins:
 - jekyll-remote-theme
