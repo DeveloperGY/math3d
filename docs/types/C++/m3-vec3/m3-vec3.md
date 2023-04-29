@@ -1,7 +1,7 @@
 ---
 layout: default
 title: Vec3
-description: A 3 dimensional vector type
+description: A 3D vector type
 ---
 
 # m3::vec3
@@ -30,4 +30,4 @@ A vector type that stores xyz values
 m3::vec3 vec(0, 0, 1); // x: 0, y: 0, z: 1
 ```
 
-[back](/)
+[Home](https://developergy.github.io/math3d/)
