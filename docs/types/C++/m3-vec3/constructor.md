@@ -29,6 +29,12 @@ constructs a vec3 filled with 0s
 `float y`: The y coordinate  
 `float z`: The z coordinate
 
+#### `vec3(const m3::vec3 &v3)`
+`const m3::vec3 &v3`: A vec3 to copy
+
+#### `vec3(const m3::vec3 &v4)`
+`const m3::vec4 &v4`: A vec4 to copy \(minus the w component\)
+
 ### Return Value
 
 `m3::vec3`: The constructed vec3
