@@ -1,3 +1,9 @@
+---
+layout: default
+title: Function Name (no namespace)
+description: Function Description
+---
+
 # Function Name
 
 ## Signature

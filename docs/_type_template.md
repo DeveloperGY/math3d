@@ -1,3 +1,9 @@
+---
+layout: default
+title: Type(No namespace)
+description: Type description
+---
+
 # Type Name
 
 ## Signature

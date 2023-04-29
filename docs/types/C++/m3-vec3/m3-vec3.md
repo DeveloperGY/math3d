@@ -1,3 +1,9 @@
+---
+layout: default
+title: Vec3
+description: A 3 dimensional vector type
+---
+
 # m3::vec3
 
 ## Signature
@@ -23,3 +29,5 @@ A vector type that stores xyz values
 ```c++
 m3::vec3 vec(0, 0, 1); // x: 0, y: 0, z: 1
 ```
+
+[back](/)
