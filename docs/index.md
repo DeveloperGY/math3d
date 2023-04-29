@@ -1,6 +1,7 @@
 # Math 3D
 
-Welcome to the Math 3D wiki! Here lies the documentation for the library, enjoy!
+Math3D is a library written in C++ with two interfaces, one for C and one for C++.  
+This is so that it can be used in both c and c++ projects!
 
 ## Types
 

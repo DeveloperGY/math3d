@@ -23,6 +23,8 @@ namespace m3
         vec3(float x, float y, float z);
         vec3(const m3::vec3 &v3);
         vec3(const m3::vec4 &v4);
+
+        // add friends
     };
 
 
