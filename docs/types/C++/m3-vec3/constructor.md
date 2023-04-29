@@ -1,6 +1,6 @@
 ---
 layout: default
-title: m3::vec3::vec3
+title: vec3::vec3()
 description: Constructs a m3::vec
 ---
 
