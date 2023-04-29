@@ -34,4 +34,4 @@ int main(void)
 }
 ```
 
-[Home](https://developergy.github.io/math3d/)
+## [Home](https://developergy.github.io/math3d/)

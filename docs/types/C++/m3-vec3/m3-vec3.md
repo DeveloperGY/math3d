@@ -1,6 +1,6 @@
 ---
 layout: default
-title: Vec3
+title: vec3
 description: A 3D vector type
 ---
 
@@ -24,7 +24,7 @@ namespace m3
 
 ### Methods
 
-[`(Constructor)`](./constructor.md)
+[`(constructor)`](./constructor.md)
 
 ## Description
 
@@ -36,4 +36,4 @@ A 3D vector type.
 m3::vec3 vec(0, 0, 1); // x: 0, y: 0, z: 1
 ```
 
-[Home](https://developergy.github.io/math3d/)
+## [Home](https://developergy.github.io/math3d/)
