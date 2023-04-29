@@ -18,21 +18,21 @@ vec3(const m3::vec4 &v4);
 
 ### Parameters
 
-#### `vec3(void)`
+#### Sig: `vec3(void)`
 constructs a vec3 filled with 0s
 
-#### `vec3(float values[3])`
+#### Sig: `vec3(float values[3])`
 `float values[3]`: xyz coordinates \(in that order\)
 
-#### `vec3(float x, float y, float z)`
+#### Sig: `vec3(float x, float y, float z)`
 `float x`: The x coordinate  
 `float y`: The y coordinate  
 `float z`: The z coordinate
 
-#### `vec3(const m3::vec3 &v3)`
+#### Sig: `vec3(const m3::vec3 &v3)`
 `const m3::vec3 &v3`: A vec3 to copy
 
-#### `vec3(const m3::vec3 &v4)`
+#### Sig: `vec3(const m3::vec3 &v4)`
 `const m3::vec4 &v4`: A vec4 to copy \(minus the w component\)
 
 ### Return Value
