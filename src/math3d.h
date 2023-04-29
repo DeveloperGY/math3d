@@ -16,7 +16,7 @@ namespace m3
 
     struct vec3
     {
-        float data[3];
+        double data[3];
 
         vec3();
         vec3(float values[3]);
@@ -28,7 +28,7 @@ namespace m3
 
     struct vec4
     {
-        float data[4];
+        double data[4];
 
         vec4();
         vec4(float values[4]);
@@ -40,7 +40,7 @@ namespace m3
 
     struct quat
     {
-        float data[4];
+        double data[4];
 
         quat();
         quat(float values[4]);
@@ -54,7 +54,7 @@ namespace m3
 
     struct mat4
     {
-        float data[16];
+        double data[16];
     };
 }
 

@@ -1,4 +1,4 @@
-# Function Name
+# Type Name
 
 ## Signature
 
@@ -6,13 +6,13 @@
 Declaration
 ```
 
-### Parameters
+### Attributes
 
-`void`: Nothing
+`void Signature`
 
-### Return Value
+### Methods
 
-`void`: Nothing
+[`void Signature`]()
 
 ## Description
 
