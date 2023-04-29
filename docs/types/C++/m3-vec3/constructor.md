@@ -1,7 +1,7 @@
 ---
 layout: default
-title: Function Name (no namespace)
-description: Function Description
+title: m3::vec3::vec3
+description: Constructs a m3::vec
 ---
 
 # Function Name
