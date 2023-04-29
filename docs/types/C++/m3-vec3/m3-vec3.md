@@ -21,7 +21,7 @@ namespace m3
         vec3(const m3::vec3 &v3);
         vec3(const m3::vec4 &v4);
 
-        // overloads will go here when library is done
+        // overloads will go here when they are done
     };
 }
 ```
@@ -33,10 +33,14 @@ namespace m3
 ### Methods
 
 [`vec3()`](./m3-vec3.md)
+[`vec3(float[3])`](./m3-vec3.md)
+[`vec3(float, float, float)`](./m3-vec3.md)
+[`vec3(const m3::vec3 &)`](./m3-vec3.md)
+[`vec3(const m3::vec4 &)`](./m3-vec3.md)
 
 ## Description
 
-A vector type that stores xyz values
+A 3D vector type.
 
 ## Example
 
