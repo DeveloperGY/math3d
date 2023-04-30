@@ -40,7 +40,7 @@ A quaternion type.
 ## Example
 
 ```c++
-m3::quat q(1, 0, 0, 0); // w: 1, i: 0, j: 0, k: 0
+m3::quat q(0, 1, 0, 0); // w: 1, i: 0, j: 0, k: 0 (0 degrees around the x axis)
 ```
 
 ## [Home](https://developergy.github.io/math3d/)
