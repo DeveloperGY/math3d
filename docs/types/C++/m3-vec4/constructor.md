@@ -31,7 +31,7 @@ constructs a vec3 filled with 0s
 `float w`: The w coordinate
 
 #### Sig: `vec3(const m3::vec3 &v3, float w)`
-`const m3::vec3 &v3`: A vec3 to copy into xyz
+`const m3::vec3 &v3`: A vec3 to copy into xyz  
 `float w`: A float to input as the w coordinate
 
 #### Sig: `vec3(const m3::vec4 &v4)`
