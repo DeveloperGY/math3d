@@ -31,7 +31,7 @@ m3::vec3 &operator/=(m3::vec3 &v, double n);
 
 ### Parameters
 
-`(1-4)`: Add and subtract m3::vec3 with another m3::vec in the same way you would in linear algebra
+`(1-4)`: Add and subtract m3::vec3 with another m3::vec3 in the same way you would in linear algebra
 
 `(5-14)`: Multiply and divide an m3::vec3 by a scalar value the same way you would in linear algebra
 

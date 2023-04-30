@@ -32,7 +32,7 @@ constructs a vec3 filled with 0s
 #### Sig: `vec3(const m3::vec3 &v3)`
 `const m3::vec3 &v3`: A vec3 to copy
 
-#### Sig: `vec3(const m3::vec3 &v4)`
+#### Sig: `vec3(const m3::vec4 &v4)`
 `const m3::vec4 &v4`: A vec4 to copy \(minus the w component\)
 
 ### Return Value
