@@ -13,6 +13,7 @@ quat();
 quat(float values[4]);
 quat(float degree, float x, float y, float z);
 quat(float degree, const m3::vec3 &axis);
+quat(const m3::vec3 &v3);
 quat(const m3::vec4 &v4);
 quat(const m3::quat &q);
 ```
@@ -35,8 +36,11 @@ constructs a quaternion with no rotation pointing in the x axis
 `float degree`: The angle measure of rotation in degrees
 `const m3::vec3 &v3`: A vec3 that defines thge axis of rotation
 
+#### Sig: `quat(const m3::vec3 &v3)`
+`const m3::vec3 &v3`: A vec3 to turn into a quaternion
+
 #### Sig: `quat(const m3::vec4 &v4)`
-`const m3::vec4 &v4`: A vector that holds wijk values \(in that order\)
+`const m3::vec4 &v4`: A vec4 to turn into a quaternion
 
 #### Sig: `quat(const m3::quat &q)`
 `const m3::quat &q`: A quaternion to copy

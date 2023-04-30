@@ -46,12 +46,22 @@ m3::quat::quat(float degree, const m3::vec3 &axis)
     return;
 }
 
+m3::quat::quat(const m3::vec3 &v)
+{
+    this->data[0] = 0;
+    this->data[1] = v.data[0];
+    this->data[2] = v.data[1];
+    this->data[3] = v.data[2];
+
+    return;
+}
+
 m3::quat::quat(const m3::vec4 &v)
 {
-    this->data[0] = v.data[0];
-    this->data[1] = v.data[1];
-    this->data[2] = v.data[2];
-    this->data[3] = v.data[3];
+    this->data[0] = 0;
+    this->data[1] = v.data[0];
+    this->data[2] = v.data[1];
+    this->data[3] = v.data[2];
 
     return;
 }

@@ -46,6 +46,7 @@ namespace m3
         quat(float values[4]);
         quat(float degree, float x, float y, float z);
         quat(float degree, const m3::vec3 &axis);
+        quat(const m3::vec3 &v3);
         quat(const m3::vec4 &v4);
         quat(const m3::quat &q);
     };
@@ -81,7 +82,7 @@ m3::vec3 &operator/=(m3::vec3 &v, double n);
 // ### END vec3 ###
 
 
-// ### Vec4 ###
+// ### vec4 ###
 
 // Add/Sub vec34
 m3::vec3 operator+(const m3::vec3 &l, const m3::vec3 &r);
@@ -105,6 +106,13 @@ m3::vec3 &operator/=(m3::vec3 &v, double n);
 // ### END vec4 ###
 
 
+// ### quat ###
+
+m3::vec3 operator*(const m3::quat &q, const m3::vec3 &v3);
+m3::vec3 operator*(const m3::vec3 &v3, const m3::quat &q);
+m3::vec3 &operator*=(m3::vec3 &v3, const m3::quat &q);
+
+// ### END quat ###
 
 #endif // C++
 
