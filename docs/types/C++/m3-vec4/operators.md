@@ -9,13 +9,13 @@ description: Operator overloads for m3::vec4
 ## Signature
 
 ```c++
-// Add/Sub vec3
+// Add/Sub vec4
 m3::vec4 operator+(const m3::vec4 &l, const m3::vec4 &r);
 m3::vec4 operator-(const m3::vec4 &l, const m3::vec4 &r);
 m3::vec4 &operator+=(m3::vec4 &l, const m3::vec4 &r);
 m3::vec4 &operator-=(m3::vec4 &l, const m3::vec4 &r);
 
-// Mul/Div vec3 primitives
+// Mul/Div vec4 primitives
 m3::vec4 operator*(const m3::vec4 &v, long n);
 m3::vec4 operator*(long n, const m3::vec4 &v);
 m3::vec4 &operator*=(m3::vec4 &v, long n);
