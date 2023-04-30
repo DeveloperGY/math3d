@@ -33,22 +33,21 @@ m3::vec3 &operator/=(m3::vec3 &v, double n);
 
 `(1-4)`: Add and subtract m3::vec3 with another m3::vec in the same way you would in linear algebra
 
+`(5-14)`: Multiply and divide an m3::vec3 by a scalar value the same way you would in linear algebra
+
 ### Return Value
 
-`void`: Nothing
+`m3::vec3`: The result of the operation
 
 ## Description
 
-Description
+Overloads of the basic math operators for the m3::vec3 type
 
 
 ## Example
 
 ```c++
-int main(void)
-{
-    return 0;
-}
+ha, no examples right now
 ```
 
 ## [Home](https://developergy.github.io/math3d/)
