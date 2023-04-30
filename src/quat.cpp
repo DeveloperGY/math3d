@@ -22,12 +22,14 @@ m3::quat::quat(float values[4])
     return;
 }
 
-m3::quat::quat(float w, float i, float j, float k)
+m3::quat::quat(float degree, float x, float y, float z)
 {
-    this->data[0] = w;
-    this->data[1] = i;
-    this->data[2] = j;
-    this->data[3] = k;
+    float s = std::sin(degree/2.0f);
+
+    this->data[0] = std::cos(degree/2.0f);
+    this->data[1] = s * x;
+    this->data[2] = s * y;
+    this->data[3] = s * z;
 
     return;
 }
@@ -44,22 +46,12 @@ m3::quat::quat(float degree, const m3::vec3 &axis)
     return;
 }
 
-m3::quat::quat(const m3::vec3 &v)
-{
-    this->data[0] = 0;
-    this->data[1] = v.data[0];
-    this->data[2] = v.data[1];
-    this->data[3] = v.data[2];
-
-    return;
-}
-
 m3::quat::quat(const m3::vec4 &v)
 {
-    this->data[0] = 0;
-    this->data[1] = v.data[0];
-    this->data[2] = v.data[1];
-    this->data[3] = v.data[2];
+    this->data[0] = v.data[0];
+    this->data[1] = v.data[1];
+    this->data[2] = v.data[2];
+    this->data[3] = v.data[3];
 
     return;
 }

@@ -45,9 +45,9 @@ namespace m3
         quat();
         quat(float values[4]);
         quat(float w, float i, float j, float k);
+        quat(float degree, float x, float y, float z);
         quat(float degree, const m3::vec3 &axis);
-        quat(const m3::vec3 &v);
-        quat(const m3::vec4 &v);
+        quat(const m3::vec4 &v4);
         quat(const m3::quat &q);
     };
 

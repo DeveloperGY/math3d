@@ -1,7 +1,7 @@
 ---
 layout: default
 title: vec4::vec4()
-description: Constructs a m3::vec4
+description: Constructs an m3::vec4
 ---
 
 # m3::vec3::vec3()
