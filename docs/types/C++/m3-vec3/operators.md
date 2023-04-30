@@ -1,10 +1,10 @@
 ---
 layout: default
-title: Function Name (no namespace)
-description: Function Description
+title: vec3::operator
+description: Operator overloads for m3::vec3
 ---
 
-# Function Name
+# m3::vec3::operator
 
 ## Signature
 

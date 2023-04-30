@@ -4,7 +4,7 @@ title: vec3::vec3()
 description: Constructs a m3::vec3
 ---
 
-# Function Name
+# m3::vec3::vec3()
 
 ## Signature
 
