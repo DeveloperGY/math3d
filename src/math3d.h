@@ -84,7 +84,7 @@ m3::vec3 &operator/=(m3::vec3 &v, double n);
 
 // ### vec4 ###
 
-// Add/Sub vec34
+// Add/Sub vec4
 m3::vec3 operator+(const m3::vec3 &l, const m3::vec3 &r);
 m3::vec3 operator-(const m3::vec3 &l, const m3::vec3 &r);
 m3::vec3 &operator+=(m3::vec3 &l, const m3::vec3 &r);
@@ -103,16 +103,21 @@ m3::vec3 &operator*=(m3::vec3 &v, double n);
 m3::vec3 operator/(const m3::vec3 &v, double n);
 m3::vec3 &operator/=(m3::vec3 &v, double n);
 
+// Quats
+m3::vec3 operator*(const m3::vec3 &v);
+
 // ### END vec4 ###
 
 
 // ### quat ###
 
-m3::vec3 operator*(const m3::quat &q, const m3::vec3 &v3);
-m3::vec3 operator*(const m3::vec3 &v3, const m3::quat &q);
-m3::vec3 &operator*=(m3::vec3 &v3, const m3::quat &q);
-
 // ### END quat ###
+
+
+// ### mat4 ###
+
+// ### END mat4 ###
+
 
 #endif // C++
 
