@@ -6,4 +6,4 @@ library: obj
 
 obj:
 	cd obj ;\
-	g++ ../src/*.cpp -c -O2
+	g++ ../src/**/*.cpp -c -O2
