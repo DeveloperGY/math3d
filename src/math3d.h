@@ -4,6 +4,21 @@
 
 #ifdef __cplusplus // C++
 
+namespace m3
+{
+    // predeclaration
+    struct vec4;
+
+
+    // declarations
+    struct vec4
+    {
+        double data[4];
+
+        vec4(double x, double y, double z, double w);
+        vec4(double data[4]);
+    };
+}
 
 #endif // C++
 
@@ -18,3 +33,14 @@ extern "C" {
 
 
 #endif
+
+/**
+ * Get Vec4 done first
+ * document
+ * Mat4
+ * document
+ * Quaternion
+ * document
+ * Vec3
+ * document
+*/
