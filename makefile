@@ -1,9 +1,9 @@
-make: library
+make: build library
 
-library: obj
+library:
 	ar rcs out/libm3.a obj/*.o
 	cp src/math3d.h out
 
-obj:
+build:
 	cd obj ;\
 	g++ ../src/**/*.cpp -c -O2

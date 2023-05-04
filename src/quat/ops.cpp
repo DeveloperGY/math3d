@@ -13,3 +13,45 @@ m3::quat operator*(const m3::quat &l, const m3::quat &r)
 
     return result;
 }
+
+m3::vec4 operator*(const m3::vec4 &l, const m3::quat &r)
+{
+    m3::quat ql(l);
+
+    m3::quat rq = ql * r;
+
+    m3::vec4 result(
+        rq.i(),
+        rq.j(),
+        rq.k(),
+        l.w()
+    );
+
+    return result;
+}
+
+m3::vec4 operator*(const m3::quat &l, const m3::vec4 &r)
+{
+    m3::quat qr(r);
+
+    m3::quat rq = l * qr;
+
+    m3::vec4 result(
+        rq.i(),
+        rq.j(),
+        rq.k(),
+        r.w()
+    );
+
+    return result;
+}
+
+m3::mat4 operator*(const m3::quat &l, const m3::mat4 &r)
+{
+    return l.to_mat4() * r;
+}
+
+m3::mat4 operator*(const m3::mat4 &l, const m3::quat &r)
+{
+    return l * r.to_mat4();
+}
