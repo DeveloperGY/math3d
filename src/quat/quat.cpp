@@ -23,11 +23,11 @@ m3::quat::quat(double w, double i, double j, double k)
 m3::quat::quat(double degrees, const m3::vec4 &axis)
 {
     m3::vec4 n_axis = axis.normalized();
-    double radians = degrees * (M3_PI / 360.0f); // divides by two because of quaternion magic
+    double radians = degrees * (M3_PI / 180.0f);
 
-    double s = std::sin(radians);
+    double s = std::sin(radians / 2);
 
-    this->data[0] = std::cos(radians);
+    this->data[0] = std::cos(radians / 2);
     this->data[1] = s * n_axis.x();
     this->data[2] = s * n_axis.y();
     this->data[3] = s * n_axis.z();
@@ -37,12 +37,10 @@ m3::quat::quat(double degrees, const m3::vec4 &axis)
 
 m3::quat::quat(const m3::vec4 &v)
 {
-    m3::vec4 nv = v.normalized();
-
     this->data[0] = 0;
-    this->data[1] = nv.x();
-    this->data[1] = nv.y();
-    this->data[1] = nv.z();
+    this->data[1] = v.x();
+    this->data[2] = v.y();
+    this->data[3] = v.z();
 
     return;
 }
@@ -128,24 +126,37 @@ m3::mat4 m3::quat::to_mat4() const
     m3::quat q = this->normalized(); // forces unit quaternion
 
     // precompute
-    double ii = q.i() * q.i();
-    double jj = q.j() * q.j();
-    double kk = q.k() * q.k();
-    double ij = q.i() * q.j();
-    double ik = q.i() * q.k();
-    double jk = q.j() * q.k();
-    double wi = q.w() * q.i();
-    double wj = q.w() * q.j();
-    double wk = q.w() * q.k();
+    double xx = q.i() * q.i();
+    double yy = q.j() * q.j();
+    double zz = q.k() * q.k();
+    double xy = q.i() * q.j();
+    double xz = q.i() * q.k();
+    double yz = q.j() * q.k();
+    double wx = q.w() * q.i();
+    double wy = q.w() * q.j();
+    double wz = q.w() * q.k();
 
-    double data[16] = {
-        1-2*(jj + kk),   2*(ij-wk),   2*(ik+wj), 0.0,
-            2*(ij+wk), 1-2*(ii-kk),   2*(jk-wi), 0.0,
-            2*(ik-wj),   2*(jk+wi), 1-2*(ii+jj), 0.0,
-                  0.0,         0.0,         0.0, 1.0
-    };
+    m3::mat4 result;
 
-    m3::mat4 result(data);
+    result.data[0] = 1 - 2*(yy+zz);
+    result.data[1] =     2*(xy-wz);
+    result.data[2] =     2*(xz+wy);
+    result.data[3] =             0;
+
+    result.data[4] =     2*(xy+wz);
+    result.data[5] = 1 - 2*(xx+zz);
+    result.data[6] =     2*(yz-wx);
+    result.data[7] =             0;
+
+    result.data[8] =     2*(xz-wy);
+    result.data[9] =     2*(yz+wx);
+    result.data[10]= 1 - 2*(xx+yy);
+    result.data[11]=             0;
+
+    result.data[12]=             0;
+    result.data[13]=             0;
+    result.data[14]=             0;
+    result.data[15]=             1;
 
     return result;
 }

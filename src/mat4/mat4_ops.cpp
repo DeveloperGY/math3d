@@ -11,7 +11,7 @@ m3::mat4 operator*(const m3::mat4 &l, const m3::mat4 &r)
             result.data[i*4+j] = 0;
             for (int k=0; k<4; k++)
             {
-                result.data[i*4+j] += l.data[i*4+k] * r.data[k*4+i];
+                result.data[i*4+j] += l.data[i*4+k] * r.data[k*4+j];
             }
         }
     }

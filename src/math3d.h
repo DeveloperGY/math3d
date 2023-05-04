@@ -47,8 +47,15 @@ namespace m3
         double data[16];
 
         mat4();
+        mat4(double, double, double, double, double, double, double, double, double, double, double, double, double, double, double, double);
         mat4(double data[16]);
         mat4(m3::vec4 rows[4]);
+
+        static m3::mat4 gen_rotationX(double degrees);
+        static m3::mat4 gen_rotationY(double degrees);
+        static m3::mat4 gen_rotationZ(double degrees);
+        static m3::mat4 gen_translation(double x, double y, double z);
+        static m3::mat4 gen_scale(double x, double y, double z);
     };
 
     struct quat
@@ -89,8 +96,8 @@ m3::vec4 operator%(const m3::vec4 &l, const m3::vec4 &r); // cross product
 m3::mat4 operator*(const m3::mat4 &l, const m3::mat4 &r); // multiply matrices
 m3::vec4 operator*(const m3::vec4 &l, const m3::mat4 &r); // row vector
 m3::vec4 operator*(const m3::mat4 &l, const m3::vec4 &r); // column vector
-m3::mat4 operator*(const m3::quat &l, const m3::mat4 &r);
-m3::mat4 operator*(const m3::mat4 &l, const m3::quat &r);
+m3::mat4 operator*(const m3::quat &l, const m3::mat4 &r); // apply quaternion to matrix
+m3::mat4 operator*(const m3::mat4 &l, const m3::quat &r); // apply quaternion to matrix
 
 // quat
 m3::quat operator*(const m3::quat &l, const m3::quat &r); // multiply quats
@@ -111,14 +118,3 @@ extern "C" {
 
 
 #endif
-
-/**
- * Get Vec4 done first
- * document
- * Mat4
- * document
- * Quaternion
- * document
- * Vec3
- * document
-*/
