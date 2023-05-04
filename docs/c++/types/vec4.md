@@ -1,18 +1,15 @@
 ---
 layout: default
-title: Type(No namespace)
-description: Type description
+title: vec4
+description: A 4D vector type
 ---
 
-# m3::ec3
+# m3::vec4
 
 ## Signature
 
 ```c++
-struct vec4
-{
-    double data[4];
-};
+Declaration
 ```
 
 ### Attributes
