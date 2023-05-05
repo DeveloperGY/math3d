@@ -25,7 +25,13 @@ Constructs a new m3::vec4.
 
 ### Parameters
 
-`void`: Nothing
+1. None
+2. `double x`: The x coordinate  
+   `double y`: The y coordinate 
+   `double z`: The z coordinate  
+   `double w`: The w coordinate  
+3. `double data[4]`: The coordiantes in xyzw order
+4. `const m3::vec4 &v`: The m3::vec4 to copy
 
 ### Return Value
 
