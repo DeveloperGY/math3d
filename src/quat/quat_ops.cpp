@@ -48,10 +48,10 @@ m3::vec4 operator*(const m3::quat &l, const m3::vec4 &r)
 
 m3::mat4 operator*(const m3::quat &l, const m3::mat4 &r)
 {
-    return l.to_mat4() * r;
+    return m3::quat::to_mat4(l) * r;
 }
 
 m3::mat4 operator*(const m3::mat4 &l, const m3::quat &r)
 {
-    return l * r.to_mat4();
+    return l * m3::quat::to_mat4(r);
 }

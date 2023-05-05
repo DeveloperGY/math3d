@@ -9,29 +9,29 @@ description: A 4D vector type
 ## Signature
 
 ```c++
-Declaration
+struct vec4
+{
+    double data[4];
+};
 ```
 
 ### Attributes
 
-`double data[4]`
+`double data[4]`: xyzw values
 
 ### Methods
 
-[`constructor`]()
+[`(constructor)`]()
 
 ## Description
 
-Description
+A 4D vector type
 
 
 ## Example
 
 ```c++
-int main(void)
-{
-    return 0;
-}
+
 ```
 
 ## [Home](https://developergy.github.io/math3d/)

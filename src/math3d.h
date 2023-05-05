@@ -5,6 +5,7 @@
 #define M3_PI 3.14159265358979323
 #endif
 
+
 #ifdef __cplusplus // C++
 
 #include <cmath>
@@ -32,13 +33,16 @@ namespace m3
         double z() const;
         double w() const;
 
-        // modifies the calling vector
-        m3::vec4 &normalize();
 
-        // does not modify calling vector
-        m3::vec4 normalized() const;
+        /**
+         * Statics
+         */
 
-        double norm() const;
+        // returns magnitude/norm value
+        static double norm(const m3::vec4 &v);
+
+        // returns the normalized vector
+        static m3::vec4 normalized(const m3::vec4 &v);
     };
 
     // row major
@@ -58,6 +62,7 @@ namespace m3
         static m3::mat4 gen_scale(double x, double y, double z);
     };
 
+    // Quaternion
     struct quat
     {
         double data[4];
@@ -72,13 +77,11 @@ namespace m3
         double j() const;
         double k() const;
 
-        m3::mat4 to_mat4() const;
-
-        m3::quat conjugate() const;
-        double norm() const;
-        m3::quat reciprocal() const;
-        m3::quat normalized() const;
-        m3::quat &normalize();
+        static m3::mat4    to_mat4(const m3::quat &q);
+        static m3::quat  conjugate(const m3::quat &q);
+        static   double       norm(const m3::quat &q);
+        static m3::quat reciprocal(const m3::quat &q);
+        static m3::quat normalized(const m3::quat &q);
     };
 }
 

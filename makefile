@@ -6,10 +6,10 @@ library:
 
 build:
 	cd obj ;\
-	g++ ../src/**/*.cpp -c -O2
+	g++ ../src/**/*.cpp -c -O2 -Werror
 
 tests:
-	g++ test/*.cpp -o test/bin/cpp -Iout -Lout -lm3
-	gcc test/*.c -o test/bin/c -Iout -Lout -lm3
+	g++ test/src/c++/*.cpp -o test/bin/cpp -Iout -Lout -lm3
+	gcc test/src/c/*.c -o test/bin/c -Iout -Lout -lm3
 	./test/bin/c
 	./test/bin/cpp

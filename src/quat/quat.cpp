@@ -22,7 +22,7 @@ m3::quat::quat(double w, double i, double j, double k)
 
 m3::quat::quat(double degrees, const m3::vec4 &axis)
 {
-    m3::vec4 n_axis = axis.normalized();
+    m3::vec4 n_axis = m3::vec4::normalized(axis);
     double radians = degrees * (M3_PI / 180.0f);
 
     double s = std::sin(radians / 2);
@@ -65,22 +65,24 @@ double m3::quat::k() const
     return this->data[3];
 }
 
-double m3::quat::norm() const
+
+
+double m3::quat::norm(const m3::quat &q)
 {
-    return sqrt(pow(this->i(), 2) + pow(this->j(), 2) + pow(this->k(), 2) + pow(this->w(), 2));
+    return sqrt(pow(q.i(), 2) + pow(q.j(), 2) + pow(q.k(), 2) + pow(q.w(), 2));
 }
 
-m3::quat m3::quat::conjugate() const
+m3::quat m3::quat::conjugate(const m3::quat &q)
 {
-    m3::quat result(this->w(), -this->i(), -this->j(), -this->k());
+    m3::quat result(q.w(), -q.i(), -q.j(), -q.k());
 
     return result;
 }
 
-m3::quat m3::quat::reciprocal() const
+m3::quat m3::quat::reciprocal(const m3::quat &q)
 {
-    m3::quat c = this->conjugate();
-    double n2 = pow(this->norm(), 2);
+    m3::quat c = m3::quat::conjugate(q);
+    double n2 = pow(m3::quat::norm(q), 2);
 
     m3::quat result(
         c.w() / n2,
@@ -92,38 +94,26 @@ m3::quat m3::quat::reciprocal() const
     return result;
 }
 
-m3::quat m3::quat::normalized() const
+m3::quat m3::quat::normalized(const m3::quat &q)
 {
-    double n = this->norm();
+    double n = m3::quat::norm(q);
 
     m3::quat result(
-        this->w() / n,
-        this->i() / n,
-        this->j() / n,
-        this->k() / n
+        q.w() / n,
+        q.i() / n,
+        q.j() / n,
+        q.k() / n
     );
 
     return result;
 }
 
-m3::quat & m3::quat::normalize()
-{
-    double n = this->norm();
-
-    this->data[0] /= n;
-    this->data[1] /= n;
-    this->data[2] /= n;
-    this->data[3] /= n;
-
-    return *this;
-}
-
-m3::mat4 m3::quat::to_mat4() const
+m3::mat4 m3::quat::to_mat4(const m3::quat &qu)
 {
     // HERE BE DRAGONS
     // - vector calculus and stuff according to wikipedia
 
-    m3::quat q = this->normalized(); // forces unit quaternion
+    m3::quat q = m3::quat::normalized(qu); // forces unit quaternion
 
     // precompute
     double xx = q.i() * q.i();
