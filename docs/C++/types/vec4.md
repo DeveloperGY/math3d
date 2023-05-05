@@ -25,7 +25,7 @@ The 4D vector type used throughout the math3d library.
 
 ### Member Methods
 
-[`(constructor)`]()  
+[`(constructor)`](../functions/vec4/constructor.md)  
 [`double x()`]()  
 [`double y()`]()  
 [`double z()`]()  
