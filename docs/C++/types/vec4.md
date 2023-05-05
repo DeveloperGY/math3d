@@ -4,7 +4,7 @@ title: vec4
 description: A 4D Vector Type
 ---
 
-# m3::vec4
+# [m3](https://developergy.github.io/math3d/)::vec4
 
 ## Signature
 

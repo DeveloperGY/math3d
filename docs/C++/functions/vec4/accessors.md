@@ -4,7 +4,7 @@ title: vec4::(accessors)
 description: Ways to access the coordinates in the m3::vec4
 ---
 
-# m3::vec4::(accessors)
+# [m3](https://developergy.github.io/math3d/)::[vec4](../../types/vec4.md)::(accessors)
 
 ## Signature
 

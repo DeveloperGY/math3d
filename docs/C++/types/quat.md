@@ -4,7 +4,7 @@ title: quat
 description: A Quaternion Type
 ---
 
-# m3::quat
+# [m3](https://developergy.github.io/math3d/)::quat
 
 ## Signature
 

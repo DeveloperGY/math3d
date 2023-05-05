@@ -4,7 +4,7 @@ title: vec4::vec4()
 description: The constructor for m3::vec4
 ---
 
-# m3::vec4::vec4()
+# [m3](https://developergy.github.io/math3d/)::[vec4](../../types/vec4.md)::vec4()
 
 ## Signature
 
@@ -27,7 +27,7 @@ Constructs a new m3::vec4.
 
 1. None
 2. `double x`: The x coordinate  
-   `double y`: The y coordinate 
+   `double y`: The y coordinate  
    `double z`: The z coordinate  
    `double w`: The w coordinate  
 3. `double data[4]`: The coordiantes in xyzw order
