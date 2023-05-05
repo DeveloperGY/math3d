@@ -26,10 +26,7 @@ The 4D vector type used throughout the math3d library.
 ### Member Methods
 
 [`(constructor)`](../functions/vec4/constructor.md)  
-[`double x()`]()  
-[`double y()`]()  
-[`double z()`]()  
-[`double w()`]()  
+[`(accessors)`](../functions/vec4/accessors.md)   
 
 [`static double norm(const m3::vec4 &v)`]()  
 [`static m3::vec4 normalized(const m3::vec4 &v)`]()
