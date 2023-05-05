@@ -1,10 +1,10 @@
 ---
 layout: default
-title: Type(No namespace)
-description: Type description
+title: vec4
+description: A 4D Vector Type
 ---
 
-# Type Name
+# m3::vec4
 
 ## Signature
 
@@ -25,15 +25,15 @@ The 4D vector type used throughout the math3d library.
 
 ### Member Methods
 
-[`(constructor)`]()
-[`double x()`]()
-[`double y()`]()
-[`double z()`]()
-[`double w()`]()
+[`(constructor)`]()  
+[`double x()`]()  
+[`double y()`]()  
+[`double z()`]()  
+[`double w()`]()  
 
 ### Non-member Methods
 
-[`static double norm(const m3::vec4 &v)`]()
+[`static double norm(const m3::vec4 &v)`]()  
 [`static m3::vec4 normalized(const m3::vec4 &v)`]()
 
 ## Example
