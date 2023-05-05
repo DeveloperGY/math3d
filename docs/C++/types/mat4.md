@@ -30,7 +30,7 @@ The 4D matrix type used throughout the math3d library.
 [`static m3::mat4 gen_rotationX(double degrees)`]()  
 [`static m3::mat4 gen_rotationY(double degrees)`]()  
 [`static m3::mat4 gen_rotationZ(double degrees)`]()  
-[`static m3::mat4 gen_translation(double x, double y, double z)`]()
+[`static m3::mat4 gen_translation(double x, double y, double z)`]()  
 [`static m3::mat4 gen_scale(double x, double y, double z)`]()
 
 ### Non-member Methods
