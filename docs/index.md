@@ -10,6 +10,7 @@ Math3D is used to handles vectors, matrices, and quaternions for 3D graphics pro
 # Types
 
 ## C++
-[`m3::vec4`](./C++/types/vec4.md)
+[`m3::vec4`](./C++/types/vec4.md)  
+[`m3::vec4`](./C++/types/quat.md)
 
 ## C

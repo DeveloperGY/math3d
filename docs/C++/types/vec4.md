@@ -31,10 +31,12 @@ The 4D vector type used throughout the math3d library.
 [`double z()`]()  
 [`double w()`]()  
 
-### Non-member Methods
-
 [`static double norm(const m3::vec4 &v)`]()  
 [`static m3::vec4 normalized(const m3::vec4 &v)`]()
+
+### Non-member Methods
+
+None
 
 ## Example
 
