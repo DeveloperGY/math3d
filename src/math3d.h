@@ -34,14 +34,9 @@ namespace m3
         double w() const;
 
 
-        /**
-         * Statics
-         */
+        // Static Member Methods
 
-        // returns magnitude/norm value
         static double norm(const m3::vec4 &v);
-
-        // returns the normalized vector
         static m3::vec4 normalized(const m3::vec4 &v);
     };
 

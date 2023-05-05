@@ -28,7 +28,9 @@ Description
 ## Example
 
 ```c++
-int main(void)
+#include <math3d.h>
+
+int main()
 {
     return 0;
 }

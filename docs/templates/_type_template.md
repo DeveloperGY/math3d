@@ -12,23 +12,28 @@ description: Type description
 Declaration
 ```
 
-### Attributes
-
-`void Signature`
-
-### Methods
-
-[`void Signature`]()
-
 ## Description
 
 Description
 
+### Member Types
+
+`void Signature`:
+
+### Member Methods
+
+[`void Signature`]()
+
+### Non-member Methods
+
+[`void Signature`]()
 
 ## Example
 
 ```c++
-int main(void)
+#include <math3d.h>
+
+int main()
 {
     return 0;
 }
