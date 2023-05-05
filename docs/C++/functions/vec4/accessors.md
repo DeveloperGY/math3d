@@ -25,10 +25,7 @@ Accesses the values in an m3::vec4
 
 ### Parameters
 
-1. None
-2. None
-3. None
-4. None
+None
 
 ### Return Value
 
