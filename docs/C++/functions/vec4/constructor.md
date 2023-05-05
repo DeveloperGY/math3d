@@ -1,16 +1,15 @@
 ---
 layout: default
-title: Function Name (no namespace)
-description: Function Description
+title: vec4::vec4()
+description: The constructor for m3::vec4
 ---
 
-# Function Name
+# m3::vec4::vec4()
 
 ## Signature
 
-```c++
-Declaration
-```
+| vec4() | \(1\) |
+| vec4(double x, double y, double z, double w) | \(2\) |
 
 ## Description
 
