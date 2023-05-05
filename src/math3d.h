@@ -31,7 +31,7 @@ namespace m3
         vec4();
         vec4(double x, double y, double z, double w);
         vec4(double data[4]);
-        vec4(const vec4 &v);
+        vec4(const m3::vec4 &v);
 
         double x() const;
         double y() const;
