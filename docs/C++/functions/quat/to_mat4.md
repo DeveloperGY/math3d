@@ -4,7 +4,7 @@ title: quat::to_mat4()
 description: Converts an m3::quat to an m3::mat4
 ---
 
-# m3::quat::to_mat4()
+# [m3](https://developergy.github.io/math3d)::[quat](../../types/quat.md)::to_mat4()
 
 ## Signature
 
