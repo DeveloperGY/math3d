@@ -11,7 +11,10 @@ description: Retrieves the normalized version of a vector
 ```c++
 namespace m3
 {
-    static m3::vec4 struct vec4::normalized(const m3::vec4 &v);
+    struct m3::vec4
+    {
+        static m3::vec4 vec4::normalized(const m3::vec4 &v);
+    }
 }
 ```
 

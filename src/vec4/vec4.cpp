@@ -78,3 +78,13 @@ m3::vec4 m3::vec4::normalized(const m3::vec4 &v)
 
     return result;
 }
+
+void m3::vec4::toGL(const m3::vec4 &v, float *dest)
+{
+    dest[0] = (float)v.x();
+    dest[1] = (float)v.y();
+    dest[2] = (float)v.z();
+    dest[3] = (float)v.w();
+
+    return;
+}

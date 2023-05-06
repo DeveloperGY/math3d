@@ -4,7 +4,7 @@ title: quat::quat
 description: m3::quat constructor
 ---
 
-# m3::quat::quat()
+# [m3](https://developergy.github.io/math3d)::[quat](../../types/quat.md)::quat()
 
 ## Signature
 
