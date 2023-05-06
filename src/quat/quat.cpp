@@ -45,6 +45,16 @@ m3::quat::quat(const m3::vec4 &v)
     return;
 }
 
+m3::quat::quat(const m3::quat &q)
+{
+    this->data[0] = q.w();
+    this->data[1] = q.i();
+    this->data[2] = q.j();
+    this->data[3] = q.k();
+
+    return;
+}
+
 double m3::quat::w() const
 {
     return this->data[0];

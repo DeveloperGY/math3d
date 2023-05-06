@@ -1,3 +1,8 @@
+/**
+ * TODO: - OpenGL Conversions
+ *       - vec3
+*/
+
 #ifndef MATH3D_H
 #define MATH3D_H
 
@@ -26,7 +31,7 @@ namespace m3
         vec4();
         vec4(double x, double y, double z, double w);
         vec4(double data[4]);
-        vec4(const vec4 &v);
+        vec4(const m3::vec4 &v);
 
         double x() const;
         double y() const;
@@ -34,14 +39,9 @@ namespace m3
         double w() const;
 
 
-        /**
-         * Statics
-         */
+        // Static Member Methods
 
-        // returns magnitude/norm value
         static double norm(const m3::vec4 &v);
-
-        // returns the normalized vector
         static m3::vec4 normalized(const m3::vec4 &v);
     };
 
@@ -71,6 +71,7 @@ namespace m3
         quat(double w, double i, double j, double k);
         quat(double degrees, const m3::vec4 &axis);
         quat(const m3::vec4 &v);
+        quat(const m3::quat &q);
 
         double w() const;
         double i() const;
