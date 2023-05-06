@@ -62,6 +62,7 @@ namespace m3
         static m3::mat4 gen_rotationZ(double degrees);
         static m3::mat4 gen_translation(double x, double y, double z);
         static m3::mat4 gen_scale(double x, double y, double z);
+        static void toGL(const m3::mat4 &m, float *dest);
     };
 
     // Quaternion

@@ -29,10 +29,11 @@ The quaternion type used throughout the math3d library.
 [`(accessors)`](../functions/quat/accessors.md)  
   
 [`static m3::mat4 to_mat4(const m3::quat &q)`](../functions/quat/to_mat4.md)  
-[`static m3::quat conjugate(const m3::quat &q)`]()  
-[`static double norm(const m3::quat &q)`]()  
+[`static m3::quat conjugate(const m3::quat &q)`](../functions/quat/conjugate.md)  
+[`static double norm(const m3::quat &q)`](../functions/quat/norm.md)  
 [`static m3::quat reciprocal(const m3::quat &q)`]()  
-[`static m3::quat normalized(const m3::quat &q)`]()
+[`static m3::quat normalized(const m3::quat &q)`]()  
+[`static m3::quat toGL(const m3::quat &q, float *dest)`]()
 
 ### Non-member Methods
 

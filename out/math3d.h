@@ -44,7 +44,7 @@ namespace m3
         static double norm(const m3::vec4 &v);
         static m3::vec4 normalized(const m3::vec4 &v);
         
-        static double *toGL(const m3::vec4 &v); // TODO: definition
+        static void toGL(const m3::vec4 &v, float *dest);
     };
 
     // row major
@@ -85,6 +85,7 @@ namespace m3
         static   double       norm(const m3::quat &q);
         static m3::quat reciprocal(const m3::quat &q);
         static m3::quat normalized(const m3::quat &q);
+        static void toGL(const m3::quat &q, float *dest);
     };
 }
 

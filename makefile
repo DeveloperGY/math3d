@@ -6,7 +6,7 @@ library:
 
 build:
 	cd obj ;\
-	g++ ../src/**/*.cpp -c -O2 -Werror
+	g++ ../src/**/*.cpp -c -O2 -Wall -Wextra -Werror
 
 tests:
 	g++ test/src/c++/*.cpp -o test/bin/cpp -Iout -Lout -lm3
