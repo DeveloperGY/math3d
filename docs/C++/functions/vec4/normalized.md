@@ -4,7 +4,7 @@ title: vec4::normalized()
 description: Retrieves the normalized version of a vector
 ---
 
-# m3::vec4::normalized()
+# [m3](https://developergy.github.io/math3d)::[vec4](../../types/vec4.md)::normalized()
 
 ## Signature
 
@@ -25,7 +25,7 @@ Calculates and returns the normalized version of the specified m3::vec4.
 
 ### Return Value
 
-`void`: Nothing
+`m3::vec4`: The normalized version of the specified m3::vec4
 
 ## Example
 
