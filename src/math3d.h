@@ -85,6 +85,7 @@ namespace m3
         static   double       norm(const m3::quat &q);
         static m3::quat reciprocal(const m3::quat &q);
         static m3::quat normalized(const m3::quat &q);
+        static void toGL(const m3::quat &q, float *dest);
     };
 }
 
