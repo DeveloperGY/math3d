@@ -43,6 +43,8 @@ namespace m3
 
         static double norm(const m3::vec4 &v);
         static m3::vec4 normalized(const m3::vec4 &v);
+        
+        static double *toGL(const m3::vec4 &v); // TODO: definition
     };
 
     // row major
