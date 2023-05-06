@@ -29,7 +29,7 @@ The 4D vector type used throughout the math3d library.
 [`(accessors)`](../functions/vec4/accessors.md)   
 
 [`static double norm(const m3::vec4 &v)`](../functions/vec4/norm.md)  
-[`static m3::vec4 normalized(const m3::vec4 &v)`]()
+[`static m3::vec4 normalized(const m3::vec4 &v)`](../functions/vec4/normalized.md)
 
 ### Non-member Methods
 
