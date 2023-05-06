@@ -18,10 +18,10 @@ description: Ways to access the components of an m3::qaut
 ## Description
 
 Accesses the values in an m3::vec4
-1. Accesses the x coordinate  
-2. Accesses the y coordinate
-3. Accesses the z coordinate
-4. Accesses the w coordinate
+1. Accesses the w component  
+2. Accesses the i component
+3. Accesses the j component
+4. Accesses the k component
 
 ### Parameters
 
@@ -29,7 +29,7 @@ None
 
 ### Return Value
 
-`double`: The requested coordinate
+`double`: The requested component
 
 ## Example
 

@@ -27,7 +27,15 @@ Constructs an m3::quat
 
 ### Parameters
 
-`void`: Nothing
+1. `void`: nothing
+2. `double w`: The w component
+   `double i`: The i component
+   `double j`: The j component
+   `double k`: The k component
+3. `double degrees`: The angle of rotation around the specified axis in degrees
+   `const m3::vec4 &axis`: The axis to rotate around
+4. `const m3::vec4 &v`: The m3::vec4 to quaternize
+5. `cosnt m3::quat &q`: The quaternion to copy
 
 ### Return Value
 
