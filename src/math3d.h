@@ -71,6 +71,7 @@ namespace m3
         quat(double w, double i, double j, double k);
         quat(double degrees, const m3::vec4 &axis);
         quat(const m3::vec4 &v);
+        quat(const m3::quat &q);
 
         double w() const;
         double i() const;

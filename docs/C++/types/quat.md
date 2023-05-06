@@ -25,7 +25,7 @@ The quaternion type used throughout the math3d library.
 
 ### Member Methods
 
-[`(constructor)`]()  
+[`(constructor)`](../functions/quat/constructor.md)  
 [`double w()`]()  
 [`double i()`]()  
 [`double j()`]()  
