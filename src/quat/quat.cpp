@@ -89,7 +89,7 @@ m3::quat m3::quat::conjugate(const m3::quat &q)
     return result;
 }
 
-m3::quat m3::quat::reciprocal(const m3::quat &q)
+m3::quat m3::quat::inverse(const m3::quat &q)
 {
     m3::quat c = m3::quat::conjugate(q);
     double n2 = pow(m3::quat::norm(q), 2);

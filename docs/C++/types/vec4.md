@@ -30,7 +30,7 @@ The 4D vector type used throughout the math3d library.
 
 [`static double norm(const m3::vec4 &v)`](../functions/vec4/norm.md)  
 [`static m3::vec4 normalized(const m3::vec4 &v)`](../functions/vec4/normalized.md)  
-[`static void toGL(const m3::vec4 &v, float *dest)`](../functions/vec4/toGL.md)
+[`static void to_GL(const m3::vec4 &v, float *dest)`](../functions/vec4/toGL.md)
 
 ### Non-member Methods
 

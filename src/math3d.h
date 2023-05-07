@@ -44,7 +44,7 @@ namespace m3
         static double norm(const m3::vec4 &v);
         static m3::vec4 normalized(const m3::vec4 &v);
         
-        static void toGL(const m3::vec4 &v, float *dest);
+        static void to_GL(const m3::vec4 &v, float *dest);
     };
 
     // row major
@@ -62,7 +62,11 @@ namespace m3
         static m3::mat4 gen_rotationZ(double degrees);
         static m3::mat4 gen_translation(double x, double y, double z);
         static m3::mat4 gen_scale(double x, double y, double z);
-        static void toGL(const m3::mat4 &m, float *dest);
+        // model matrix
+        // perspective projection matrix
+        // orthographic projection matrix
+        // perspective projection matrix
+        static void to_GL(const m3::mat4 &m, float *dest);
     };
 
     // Quaternion
@@ -84,9 +88,9 @@ namespace m3
         static m3::mat4    to_mat4(const m3::quat &q);
         static m3::quat  conjugate(const m3::quat &q);
         static   double       norm(const m3::quat &q);
-        static m3::quat reciprocal(const m3::quat &q);
+        static m3::quat inverse(const m3::quat &q);
         static m3::quat normalized(const m3::quat &q);
-        static void toGL(const m3::quat &q, float *dest);
+        static void to_GL(const m3::quat &q, float *dest);
     };
 }
 
