@@ -62,10 +62,6 @@ namespace m3
         static m3::mat4 gen_rotationZ(double degrees);
         static m3::mat4 gen_translation(double x, double y, double z);
         static m3::mat4 gen_scale(double x, double y, double z);
-        // model matrix
-        // perspective projection matrix
-        // orthographic projection matrix
-        // perspective projection matrix
         static void to_GL(const m3::mat4 &m, float *dest);
     };
 

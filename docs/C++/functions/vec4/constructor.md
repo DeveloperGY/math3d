@@ -31,7 +31,7 @@ Constructs a new m3::vec4.
    `double z`: The z coordinate  
    `double w`: The w coordinate  
 3. `double data[4]`: The coordiantes in xyzw order
-4. `const m3::vec4 &v`: The m3::vec4 to copy
+4. `const m3::vec4 &v`: The vec4 to copy
 
 ### Return Value
 

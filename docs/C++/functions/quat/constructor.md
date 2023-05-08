@@ -22,7 +22,7 @@ Constructs an m3::quat
 1. Defualt constructor
 2. Constructs a quaternion with the specified values
 3. Constructs a quaternion using angle axis representation
-4. Quaternizes an m3::vec4 (This should normally only be used internally for math3d)
+4. Quaternizes a vec4 (This should normally only be used internally for math3d)
 5. Copy Constructor
 
 ### Parameters
@@ -34,7 +34,7 @@ Constructs an m3::quat
    `double k`: The k component
 3. `double degrees`: The angle of rotation around the specified axis in degrees
    `const m3::vec4 &axis`: The axis to rotate around
-4. `const m3::vec4 &v`: The m3::vec4 to quaternize
+4. `const m3::vec4 &v`: The vec4 to quaternize
 5. `cosnt m3::quat &q`: The quaternion to copy
 
 ### Return Value

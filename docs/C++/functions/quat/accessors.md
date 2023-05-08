@@ -1,7 +1,7 @@
 ---
 layout: default
 title: quat::(accessors)
-description: Ways to access the components of an m3::qaut
+description: Ways to access the components of a quaternion
 ---
 
 # [m3](https://developergy.github.io/math3d/)::[quat](../../types/quat.md)::(accessors)
@@ -10,14 +10,14 @@ description: Ways to access the components of an m3::qaut
 
 | Signature | ID |
 | --- | --- |
-| vec4::w() | \(1\) |
-| vec4::i() | \(2\) |
-| vec4::j() | \(3\) |
-| vec4::k() | \(4\) |
+| quat::w() | \(1\) |
+| quat::i() | \(2\) |
+| quat::j() | \(3\) |
+| quat::k() | \(4\) |
 
 ## Description
 
-Accesses the values in an m3::vec4
+Accesses the values in a quaternion
 1. Accesses the w component  
 2. Accesses the i component
 3. Accesses the j component

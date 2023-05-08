@@ -143,7 +143,7 @@ m3::mat4 m3::mat4::gen_scale(double x, double y, double z)
     );
 }
 
-void m3::mat4::toGL(const m3::mat4 &m, float *dest)
+void m3::mat4::to_GL(const m3::mat4 &m, float *dest)
 {
     for (int row=0; row<4; row++)
     {

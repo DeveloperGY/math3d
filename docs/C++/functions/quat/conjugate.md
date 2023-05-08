@@ -28,7 +28,7 @@ Generates and returns the conjugate m3::quat
 
 ### Return Value
 
-`m3::quat`: THe conjugate of the specified m3::quat
+`m3::quat`: The conjugate of the specified m3::quat
 
 ## Example
 

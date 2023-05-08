@@ -20,15 +20,15 @@ namespace m3
 
 ## Description
 
-Converts an m3::quat to an m3::mat4
+Converts a quaternion to a mat4
 
 ### Parameters
 
-`const m3::quat &q`: the specfied m3::quat
+`const m3::quat &q`: the specfied quaternion
 
 ### Return Value
 
-`m3::mat4`: The resulting m3::mat4
+`m3::mat4`: The resulting mat4
 
 ## Example
 

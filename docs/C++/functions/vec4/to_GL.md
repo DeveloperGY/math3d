@@ -1,10 +1,10 @@
 ---
 layout: default
-title: vec4::toGL()
+title: vec4::to_GL()
 description: Converts the m3::vec4 to an opengl compatible vec4
 ---
 
-# [m3](https://developergy.github.io/math3d)::[vec4](../../types/vec4.md)::toGL()
+# [m3](https://developergy.github.io/math3d)::[vec4](../../types/vec4.md)::to_GL()
 
 ## Signature
 
@@ -13,7 +13,7 @@ namespace m3
 {
     struct vec4
     {
-        static void toGL(const m3::vec4 &v, float *dest);
+        static void to_GL(const m3::vec4 &v, float *dest);
     }
 }
 ```

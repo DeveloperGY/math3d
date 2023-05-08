@@ -32,8 +32,8 @@ The quaternion type used throughout the math3d library.
 [`static m3::quat inverse(const m3::quat &q)`]()  
 [`static double norm(const m3::quat &q)`](../functions/quat/norm.md)  
 [`static m3::quat normalized(const m3::quat &q)`]()  
+[`static m3::quat to_GL(const m3::quat &q, float *dest)`]()  
 [`static m3::mat4 to_mat4(const m3::quat &q)`](../functions/quat/to_mat4.md)  
-[`static m3::quat to_GL(const m3::quat &q, float *dest)`]()
 
 ### Non-member Methods
 

@@ -161,7 +161,7 @@ m3::mat4 m3::quat::to_mat4(const m3::quat &qu)
     return result;
 }
 
-void toGL(const m3::quat &q, float *dest)
+void to_GL(const m3::quat &q, float *dest)
 {
     dest[0] = (float)q.i();
     dest[1] = (float)q.j();
