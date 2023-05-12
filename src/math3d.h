@@ -18,12 +18,36 @@
 namespace m3
 {
     // predeclaration
+    struct vec3;
     struct vec4;
     struct mat4;
     struct quat;
 
 
     // declarations
+    
+    struct vec3
+    {
+        double data[3];
+
+        vec3();
+        vec3(double x, double y, double z);
+        vec3(double data[4]);
+        vec3(const m3::vec3 &v);
+
+        double x() const;
+        double y() const;
+        double z() const;
+
+
+        // Static Member Methods
+
+        static double norm(const m3::vec3 &v);
+        static m3::vec3 normalized(const m3::vec3 &v);
+        
+        static void to_GL(const m3::vec3 &v, float *dest);
+    };
+
     struct vec4
     {
         double data[4];
