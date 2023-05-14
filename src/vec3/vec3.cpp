@@ -4,22 +4,20 @@
  * Constructors/Destructor
  */
 
-m3::vec4::vec4(float x, float y, float z, float w)
+m3::vec3::vec3(float x, float y, float z)
 {
     this->data[0] = x;
     this->data[1] = y;
     this->data[2] = z;
-    this->data[3] = w;
     
     return;
 }
 
-m3::vec4::vec4(const m3::vec4 &vec)
+m3::vec3::vec3(const m3::vec3 &vec)
 {
     this->data[0] = vec.x();
     this->data[1] = vec.y();
     this->data[2] = vec.z();
-    this->data[3] = vec.w();
 
     return;
 }
@@ -29,27 +27,22 @@ m3::vec4::vec4(const m3::vec4 &vec)
  * Utility
  */
 
-float m3::vec4::x() const
+float m3::vec3::x() const
 {
     return this->data[0];
 }
 
-float m3::vec4::y() const
+float m3::vec3::y() const
 {
     return this->data[1];
 }
 
-float m3::vec4::z() const
+float m3::vec3::z() const
 {
     return this->data[2];
 }
 
-float m3::vec4::w() const
+m3::vec4 m3::vec3::to_vec4(const m3::vec3 &vec, float w)
 {
-    return this->data[3];
-}
-
-m3::vec3 m3::vec4::to_vec3(const m3::vec4 &vec)
-{
-    return m3::vec3(vec.x(), vec.y(), vec.z());
+    return m3::vec4(vec.x(), vec.y(), vec.z(), w);
 }

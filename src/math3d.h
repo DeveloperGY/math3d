@@ -1,8 +1,3 @@
-/**
- * TODO: - OpenGL Conversions
- *       - vec3
-*/
-
 #ifndef MATH3D_H
 #define MATH3D_H
 
@@ -17,124 +12,69 @@
 
 namespace m3
 {
-    // predeclaration
-    struct vec3;
-    struct vec4;
-    struct mat4;
-    struct quat;
+    class vec3;
+    class vec4;
+    class mat4;
+    class quat;
 
-
-    // declarations
-    
-    struct vec3
+    class vec3
     {
-        double data[3];
-
-        vec3();
-        vec3(double x, double y, double z);
-        vec3(double data[4]);
-        vec3(const m3::vec3 &v);
-
-        double x() const;
-        double y() const;
-        double z() const;
-
-
-        // Static Member Methods
-
-        static double norm(const m3::vec3 &v);
-        static m3::vec3 normalized(const m3::vec3 &v);
+        private:
+            float data[3];
         
-        static void to_GL(const m3::vec3 &v, float *dest);
-    };
-
-    struct vec4
-    {
-        double data[4];
-
-        vec4();
-        vec4(double x, double y, double z, double w);
-        vec4(double data[4]);
-        vec4(const m3::vec4 &v);
-
-        double x() const;
-        double y() const;
-        double z() const;
-        double w() const;
-
-
-        // Static Member Methods
-
-        static double norm(const m3::vec4 &v);
-        static m3::vec4 normalized(const m3::vec4 &v);
+        public: // Constructors/Destructor
+            vec3(float x = 0, float y = 0, float z = 0);
+            vec3(const m3::vec3 &vec);
         
-        static void to_GL(const m3::vec4 &v, float *dest);
+        public: // Utility
+            float x() const;
+            float y() const;
+            float z() const;
+        
+            static m3::vec4 to_vec4(const m3::vec3 &vec, float w);
     };
 
-    // row major
-    struct mat4
+    class vec4
     {
-        double data[16];
+        private:
+            float data[4];
+        
+        public: // Constructors/Destructor
+            vec4(float x = 0, float y = 0, float z = 0, float w = 1);
+            vec4(const m3::vec4 &vec);
+        
+        public: // Utility
+            float x() const;
+            float y() const;
+            float z() const;
+            float w() const;
 
-        mat4();
-        mat4(double, double, double, double, double, double, double, double, double, double, double, double, double, double, double, double);
-        mat4(double data[16]);
-        mat4(m3::vec4 rows[4]);
-
-        static m3::mat4 gen_rotationX(double degrees);
-        static m3::mat4 gen_rotationY(double degrees);
-        static m3::mat4 gen_rotationZ(double degrees);
-        static m3::mat4 gen_translation(double x, double y, double z);
-        static m3::mat4 gen_scale(double x, double y, double z);
-        static void to_GL(const m3::mat4 &m, float *dest);
+            static m3::vec3 to_vec3(const m3::vec4 &vec);
     };
 
-    // Quaternion
-    struct quat
+    class mat4 // row major
     {
-        double data[4];
+        private:
+            float data[16];
 
-        quat();
-        quat(double w, double i, double j, double k);
-        quat(double degrees, const m3::vec4 &axis);
-        quat(const m3::vec4 &v);
-        quat(const m3::quat &q);
+        public: //  Constructors/Destructor
+            mat4(
+                float x0 = 1, float y0 = 0, float z0 = 0, float w0 = 0,
+                float x1 = 0, float y1 = 1, float z1 = 0, float w1 = 0,
+                float x2 = 0, float y2 = 0, float z2 = 1, float w2 = 0,
+                float x3 = 0, float y3 = 0, float z3 = 0, float w3 = 1
+            );
 
-        double w() const;
-        double i() const;
-        double j() const;
-        double k() const;
-
-        static m3::mat4    to_mat4(const m3::quat &q);
-        static m3::quat  conjugate(const m3::quat &q);
-        static   double       norm(const m3::quat &q);
-        static m3::quat inverse(const m3::quat &q);
-        static m3::quat normalized(const m3::quat &q);
-        static void to_GL(const m3::quat &q, float *dest);
+        public: // Utility
+            static m3::mat4 translation_matrix(float x, float y, float z);
+            static m3::mat4 rotation_x_matrix(float degrees);
+            static m3::mat4 rotation_y_matrix(float degrees);
+            static m3::mat4 rotation_z_matrix(float degrees);
+            static m3::mat4 scale_matrix(float x, float y, float z);
+            static m3::mat4 change_of_basis_matrix(m3::vec3 right, m3::vec3 up, m3::vec3 forward);
+            static m3::mat4 projection_matrix(float vfov_degrees, float near, float far);
     };
 }
-
-// operators
-
-
-// Vec4
-m3::vec4 operator+(const m3::vec4 &l, const m3::vec4 &r);
-m3::vec4 operator-(const m3::vec4 &l, const m3::vec4 &r);
-double operator*(const m3::vec4 &l, const m3::vec4 &r); // dot product
-m3::vec4 operator%(const m3::vec4 &l, const m3::vec4 &r); // cross product
-
-
-//mat4
-m3::mat4 operator*(const m3::mat4 &l, const m3::mat4 &r); // multiply matrices
-m3::vec4 operator*(const m3::vec4 &l, const m3::mat4 &r); // row vector
-m3::vec4 operator*(const m3::mat4 &l, const m3::vec4 &r); // column vector
-m3::mat4 operator*(const m3::quat &l, const m3::mat4 &r); // apply quaternion to matrix
-m3::mat4 operator*(const m3::mat4 &l, const m3::quat &r); // apply quaternion to matrix
-
-// quat
-m3::quat operator*(const m3::quat &l, const m3::quat &r); // multiply quats
-m3::vec4 operator*(const m3::vec4 &l, const m3::quat &r); // apply quat to vector
-m3::vec4 operator*(const m3::quat &l, const m3::vec4 &r); // apply quat to vector
 
 #endif // C++
 

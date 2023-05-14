@@ -1,157 +1,120 @@
 #include "../math3d.h"
 
-m3::mat4::mat4()
+m3::mat4::mat4(
+    float x0, float y0, float z0, float w0,
+    float x1, float y1, float z1, float w1,
+    float x2, float y2, float z2, float w2,
+    float x3, float y3, float z3, float w3
+)
 {
-    this->data[0] = 1;
-    this->data[1] = 0;
-    this->data[2] = 0;
-    this->data[3] = 0;
+    this->data[0] = x0;
+    this->data[1] = y0;
+    this->data[2] = z0;
+    this->data[3] = w0;
 
-    this->data[4] = 0;
-    this->data[5] = 1;
-    this->data[6] = 0;
-    this->data[7] = 0;
+    this->data[4] = x1;
+    this->data[5] = y1;
+    this->data[6] = z1;
+    this->data[7] = w1;
 
-    this->data[8] = 0;
-    this->data[9] = 0;
-    this->data[10] = 1;
-    this->data[11] = 0;
+    this->data[8] = x2;
+    this->data[9] = y2;
+    this->data[10] = z2;
+    this->data[11] = w2;
 
-    this->data[12] = 0;
-    this->data[13] = 0;
-    this->data[14] = 0;
-    this->data[15] = 1;
+    this->data[12] = x3;
+    this->data[13] = y3;
+    this->data[14] = z3;
+    this->data[15] = w3;
 
     return;
 }
 
-m3::mat4::mat4(double data[16])
-{
-    for (int i=0; i<16; i++)
-    {
-        this->data[i] = data[i];
-    }
 
-    return;
-}
+/**
+ * Utility
+ */
 
-m3::mat4::mat4(m3::vec4 rows[4])
-{
-    for (int i=0; i<4; i++)
-    {
-        for (int j=0; j<4; j++)
-        {
-            this->data[i*4+j] = rows[i].data[j];
-        }
-    }
-
-    return;
-}
-
-m3::mat4::mat4(double a, double b, double c, double d, 
-               double e, double f, double g, double h, 
-               double i, double j, double k, double l, 
-               double m, double n, double o, double p)
-{
-    this->data[0] = a;
-    this->data[1] = b;
-    this->data[2] = c;
-    this->data[3] = d;
-    this->data[4] = e;
-    this->data[5] = f;
-    this->data[6] = g;
-    this->data[7] = h;
-    this->data[8] = i;
-    this->data[9] = j;
-    this->data[10] = k;
-    this->data[11] = l;
-    this->data[12] = m;
-    this->data[13] = n;
-    this->data[14] = o;
-    this->data[15] = p;
-    return;
-}
-
-m3::mat4 m3::mat4::gen_rotationX(double degrees)
-{
-    double radians = degrees * (M3_PI / 180.0f);
-
-    double s = std::sin(radians);
-    double c = std::cos(radians);
-
-    m3::mat4 result(
-        1.0, 0.0, 0.0, 0.0,
-        0.0,   c,  -s, 0.0,
-        0.0,   s,   c, 0.0,
-        0.0, 0.0, 0.0, 1.0
-    );
-
-    return result;
-}
-
-m3::mat4 m3::mat4::gen_rotationY(double degrees)
-{
-    double radians = degrees * (M3_PI / 180.0f);
-
-    double s = std::sin(radians);
-    double c = std::cos(radians);
-
-    m3::mat4 result(
-          c, 0.0,   s, 0.0,
-        0.0, 1.0, 0.0, 0.0,
-         -s, 0.0,   c, 0.0,
-        0.0, 0.0, 0.0, 1.0
-    );
-
-    return result;
-}
-
-m3::mat4 m3::mat4::gen_rotationZ(double degrees)
-{
-    double radians = degrees * (M3_PI / 180.0f);
-
-    double s = std::sin(radians);
-    double c = std::cos(radians);
-
-    m3::mat4 result(
-          c,  -s, 0.0, 0.0,
-          s,   c, 0.0, 0.0,
-        0.0, 0.0, 1.0, 0.0,
-        0.0, 0.0, 0.0, 1.0
-    );
-
-    return result;
-}
-
-m3::mat4 m3::mat4::gen_translation(double x, double y, double z)
+m3::mat4 m3::mat4::translation_matrix(float x, float y, float z)
 {
     return m3::mat4(
-        1.0, 0.0, 0.0,   x,
-        0.0, 1.0, 0.0,   y,
-        0.0, 0.0, 1.0,   z,
-        0.0, 0.0, 0.0, 1.0
+        1, 0, 0, x,
+        0, 1, 0, y,
+        0, 0, 1, z,
+        0, 0, 0, 1
     );
 }
 
-m3::mat4 m3::mat4::gen_scale(double x, double y, double z)
+m3::mat4 m3::mat4::rotation_x_matrix(float degrees)
+{
+    float radians = degrees * (M3_PI / 180.0f);
+
+    float s = std::sin(radians);
+    float c = std::cos(radians);
+
+    return m3::mat4(
+        1, 0,  0, 0,
+        0, c, -s, 0,
+        0, s,  c, 0,
+        0, 0,  0, 1
+    );
+}
+
+m3::mat4 m3::mat4::rotation_y_matrix(float degrees)
+{
+    float radians = degrees * (M3_PI / 180.0f);
+
+    float s = std::sin(radians);
+    float c = std::cos(radians);
+
+    return m3::mat4(
+         c, 0, s, 0,
+         0, 1, 0, 0,
+        -s, 0, c, 0,
+         0, 0, 0, 1
+    );
+}
+
+m3::mat4 m3::mat4::rotation_z_matrix(float degrees)
+{
+    float radians = degrees * (M3_PI / 180.0f);
+
+    float s = std::sin(radians);
+    float c = std::cos(radians);
+
+    return m3::mat4(
+        c, -s, 0, 0,
+        s,  c, 0, 0,
+        0,  0, 1, 0,
+        0,  0, 0, 1
+    );
+}
+
+m3::mat4 m3::mat4::scale_matrix(float x, float y, float z)
 {
     return m3::mat4(
-          x, 0.0, 0.0, 0.0,
-        0.0,   y, 0.0, 0.0,
-        0.0, 0.0,   z, 0.0,
-        0.0, 0.0, 0.0, 1.0
+        x, 0, 0, 0,
+        0, y, 0, 0,
+        0, 0, z, 0,
+        0, 0, 0, 1
     );
 }
 
-void m3::mat4::to_GL(const m3::mat4 &m, float *dest)
+m3::mat4 m3::mat4::change_of_basis_matrix(m3::vec3 right, m3::vec3 up, m3::vec3 forward)
 {
-    for (int row=0; row<4; row++)
-    {
-        for (int col=0; col<4; col++)
-        {
-            dest[row*4 + col] = m.data[col*4 + row]; // convert to column major
-        }
-    }
+    return m3::mat4(
+          right.x(),   right.y(),   right.z(), 0,
+             up.x(),      up.y(),      up.z(), 0,
+        forward.x(), forward.y(), forward.z(), 0,
+                  0,           0,           0, 1
+    );
+}
 
-    return;
+m3::mat4 m3::mat4::projection_matrix(float vfov_degrees, float near, float far)
+{
+    float vfov = vfov_degrees * (M3_PI / 180);
+
+    return m3::mat4(
+
+    );
 }
