@@ -49,7 +49,7 @@ float m3::vec4::w() const
     return this->data[3];
 }
 
-m3::vec3 m3::vec4::to_vec3(const m3::vec4 &vec)
+m3::vec3 m3::vec4::as_vec3(const m3::vec4 &vec)
 {
     return m3::vec3(vec.x(), vec.y(), vec.z());
 }

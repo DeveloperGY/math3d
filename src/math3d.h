@@ -31,7 +31,11 @@ namespace m3
             float y() const;
             float z() const;
         
-            static m3::vec4 to_vec4(const m3::vec3 &vec, float w);
+            static float norm(const m3::vec3 &vec);
+            static m3::vec3 normalize(const m3::vec3 &vec);
+
+            static m3::vec4 as_vec4(const m3::vec3 &vec, float w);
+            static m3::quat as_quat(const m3::vec3 &vec);
     };
 
     class vec4
@@ -49,7 +53,7 @@ namespace m3
             float z() const;
             float w() const;
 
-            static m3::vec3 to_vec3(const m3::vec4 &vec);
+            static m3::vec3 as_vec3(const m3::vec4 &vec);
     };
 
     class mat4 // row major
@@ -72,7 +76,24 @@ namespace m3
             static m3::mat4 rotation_z_matrix(float degrees);
             static m3::mat4 scale_matrix(float x, float y, float z);
             static m3::mat4 change_of_basis_matrix(m3::vec3 right, m3::vec3 up, m3::vec3 forward);
-            static m3::mat4 projection_matrix(float vfov_degrees, float near, float far);
+            static m3::mat4 projection_matrix(float vfov_degrees, float aspect_ratio, float near, float far);
+    };
+
+    class quat
+    {
+        private:
+            float data[4];
+
+        public: // Constructors/Destructor
+            quat(float w = 0, float i = 1, float j = 0, float k = 0);
+            quat(float degrees, const m3::vec3 &axis);
+            quat(const m3::quat &q);
+        
+        public: // Utility
+            float w() const;
+            float i() const;
+            float j() const;
+            float k() const;
     };
 }
 
@@ -86,6 +107,7 @@ namespace m3
 extern "C" {
 
 }
+
 #endif // C
 
 

@@ -110,11 +110,27 @@ m3::mat4 m3::mat4::change_of_basis_matrix(m3::vec3 right, m3::vec3 up, m3::vec3 
     );
 }
 
-m3::mat4 m3::mat4::projection_matrix(float vfov_degrees, float near, float far)
+m3::mat4 m3::mat4::projection_matrix(float vfov_degrees, float aspect_ratio, float near, float far)
 {
     float vfov = vfov_degrees * (M3_PI / 180);
 
-    return m3::mat4(
+    double top = near * std::tan(vfov / 2);
+    double bottom = -top;
+    double right = top * aspect_ratio;
+    double left = -right;
 
+    double m00 = (2 * near) / (right - left);
+    double m02 = (right + left) / (right - left);
+    double m11 = (2 * near) / (top - bottom);
+    double m12 = (top + bottom) / (top - bottom);
+    double m22 = (-(far + near)) / (far - near);
+    double m23 = (-2 * far * near) / (far - near);
+
+
+    return m3::mat4(
+        m00,   0, m02,   0,
+          0, m11, m12,   0,
+          0,   0, m22, m23,
+          0,   0,  -1,   0
     );
 }
