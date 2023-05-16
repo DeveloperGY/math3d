@@ -36,6 +36,8 @@ namespace m3
 
             static m3::vec4 as_vec4(const m3::vec3 &vec, float w);
             static m3::quat as_quat(const m3::vec3 &vec);
+            static m3::vec4 as_direction(const m3::vec3 &vec);
+            static m3::vec4 as_position(const m3::vec3 &vec);
     };
 
     class vec4
@@ -53,7 +55,11 @@ namespace m3
             float z() const;
             float w() const;
 
+            static float norm(const m3::vec4 &vec);
+            static m3::vec4 normalize(const m3::vec4 &vec);
+
             static m3::vec3 as_vec3(const m3::vec4 &vec);
+            static m3::quat as_quat(const m3::vec4 &vec);
     };
 
     class mat4 // row major
@@ -94,8 +100,38 @@ namespace m3
             float i() const;
             float j() const;
             float k() const;
+
+            static m3::quat conjugate(const m3::quat &quat);
+            static m3::quat inverse(const m3::quat &quat);
+            static float norm(const m3::quat &quat);
+            static m3::quat normalize(const m3::quat &quat);
+            static m3::mat4 as_mat4(const m3::quat &quat);
     };
 }
+
+// Vec Ops
+
+
+// - multiply/divide scalars
+
+m3::vec3 operator*(const m3::vec3 &vec, float val);
+m3::vec3 operator/(const m3::vec3 &vec, float val);
+m3::vec4 operator*(const m3::vec4 &vec, float val);
+m3::vec4 operator/(const m3::vec4 &vec, float val);
+
+m3::vec3 operator*=(m3::vec3 &vec, float val);
+m3::vec3 operator/=(m3::vec3 &vec, float val);
+m3::vec4 operator*=(m3::vec4 &vec, float val);
+m3::vec4 operator/=(m3::vec4 &vec, float val);
+
+// - add/sub vectors
+// - dot/cross product
+// - multiply quaternions
+
+// Mat Ops
+// - multiply vectors
+// - multiply matrices
+// - multiply quaternions
 
 #endif // C++
 

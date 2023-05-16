@@ -49,7 +49,28 @@ float m3::vec4::w() const
     return this->data[3];
 }
 
+
+float m3::vec4::norm(const m3::vec4 &vec)
+{
+    return std::sqrt(std::pow(vec.x(), 2) + std::pow(vec.y(), 2) + std::pow(vec.z(), 2));
+}
+
+m3::vec4 m3::vec4::normalize(const m3::vec4 &vec)
+{
+    float n = m3::vec4::norm(vec);
+
+    m3::vec4 v(vec.x()/n, vec.y()/n, vec.z()/n, vec.w());
+}
+
+
 m3::vec3 m3::vec4::as_vec3(const m3::vec4 &vec)
 {
     return m3::vec3(vec.x(), vec.y(), vec.z());
+}
+
+m3::quat m3::vec4::as_quat(const m3::vec4 &vec)
+{
+    m3::vec4 v = m3::vec4::normalize(vec);
+
+    return m3::quat(0, v.x(), v.y(), v.z());
 }

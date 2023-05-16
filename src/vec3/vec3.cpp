@@ -67,3 +67,13 @@ m3::quat m3::vec3::as_quat(const m3::vec3 &vec)
 
     return m3::quat(0, v.x(), v.y(), v.z());
 }
+
+m3::vec4 m3::vec3::as_direction(const m3::vec3 &vec)
+{
+    return m3::vec3::as_vec4(vec, 0);
+}
+
+m3::vec4 m3::vec3::as_position(const m3::vec3 &vec)
+{
+    return m3::vec3::as_vec4(vec, 1);
+}
