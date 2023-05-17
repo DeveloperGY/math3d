@@ -13,15 +13,6 @@ m3::vec3::vec3(float x, float y, float z)
     return;
 }
 
-m3::vec3::vec3(const m3::vec3 &vec)
-{
-    this->data[0] = vec.x();
-    this->data[1] = vec.y();
-    this->data[2] = vec.z();
-
-    return;
-}
-
 
 /**
  * Utility

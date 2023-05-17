@@ -24,7 +24,6 @@ namespace m3
         
         public: // Constructors/Destructor
             vec3(float x = 0, float y = 0, float z = 0);
-            vec3(const m3::vec3 &vec);
         
         public: // Utility
             float x() const;
@@ -47,7 +46,6 @@ namespace m3
         
         public: // Constructors/Destructor
             vec4(float x = 0, float y = 0, float z = 0, float w = 1);
-            vec4(const m3::vec4 &vec);
         
         public: // Utility
             float x() const;
@@ -119,18 +117,40 @@ m3::vec3 operator/(const m3::vec3 &vec, float val);
 m3::vec4 operator*(const m3::vec4 &vec, float val);
 m3::vec4 operator/(const m3::vec4 &vec, float val);
 
-m3::vec3 operator*=(m3::vec3 &vec, float val);
-m3::vec3 operator/=(m3::vec3 &vec, float val);
-m3::vec4 operator*=(m3::vec4 &vec, float val);
-m3::vec4 operator/=(m3::vec4 &vec, float val);
+m3::vec3 &operator*=(m3::vec3 &vec, float val);
+m3::vec3 &operator/=(m3::vec3 &vec, float val);
+m3::vec4 &operator*=(m3::vec4 &vec, float val);
+m3::vec4 &operator/=(m3::vec4 &vec, float val);
+
 
 // - add/sub vectors
+
+m3::vec3 operator+(const m3::vec3 &v0, const m3::vec3 &v1);
+m3::vec3 operator-(const m3::vec3 &v0, const m3::vec3 &v1);
+m3::vec4 operator+(const m3::vec4 &v0, const m3::vec4 &v1);
+m3::vec4 operator-(const m3::vec4 &v0, const m3::vec4 &v1);
+
+m3::vec3 &operator+=(m3::vec3 &v0, const m3::vec3 &v1);
+m3::vec3 &operator-=(m3::vec3 &v0, const m3::vec3 &v1);
+m3::vec4 &operator+=(m3::vec4 &v0, const m3::vec4 &v1);
+m3::vec4 &operator-=(m3::vec4 &v0, const m3::vec4 &v1);
+
+
 // - dot/cross product
+
+float operator*(const m3::vec3 &v0, const m3::vec3 &v1);
+float operator*(const m3::vec4 &v0, const m3::vec4 &v1);
+m3::vec3 operator%(const m3::vec3 &v0, const m3::vec3 &v1);
+m3::vec4 operator%(const m3::vec4 &v0, const m3::vec4 &v1);
+
+// - multiply matrices
 // - multiply quaternions
 
 // Mat Ops
-// - multiply vectors
 // - multiply matrices
+// - multiply quaternions
+
+// Quat Ops
 // - multiply quaternions
 
 #endif // C++

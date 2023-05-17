@@ -14,16 +14,6 @@ m3::vec4::vec4(float x, float y, float z, float w)
     return;
 }
 
-m3::vec4::vec4(const m3::vec4 &vec)
-{
-    this->data[0] = vec.x();
-    this->data[1] = vec.y();
-    this->data[2] = vec.z();
-    this->data[3] = vec.w();
-
-    return;
-}
-
 
 /**
  * Utility
