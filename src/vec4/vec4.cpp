@@ -49,7 +49,7 @@ m3::vec4 m3::vec4::normalize(const m3::vec4 &vec)
 {
     float n = m3::vec4::norm(vec);
 
-    m3::vec4 v(vec.x()/n, vec.y()/n, vec.z()/n, vec.w());
+    return m3::vec4(vec.x()/n, vec.y()/n, vec.z()/n, vec.w());
 }
 
 

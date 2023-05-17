@@ -128,3 +128,71 @@ m3::vec4 operator%(const m3::vec4 &v0, const m3::vec4 &v1) // always returns dir
     
     return m3::vec4(x, y, z, 0);
 }
+
+
+// - multiply matrices
+
+namespace m3{ // to handle namespace problems for friend functions
+
+m3::vec4 operator*(const m3::vec4 &vec, const m3::mat4 &mat)
+{
+    float vals[4] = {0, 0, 0, 0};
+
+    for (int i=0; i<4; i++)
+    {
+        for (int j=0; j<4; j++)
+        {
+            vals[i] += vec.data[j] * mat.data[j*4+i];
+        }
+    }
+
+    return m3::vec4(vals[0], vals[1], vals[2], vals[3]);
+}
+
+m3::vec4 operator*(const m3::mat4 &mat, const m3::vec4 &vec)
+{
+    float vals[4] = {0, 0, 0, 0};
+
+    for (int i=0; i<4; i++)
+    {
+        for (int j=0; j<4; j++)
+        {
+            vals[i] += vec.data[j] * mat.data[i*4+j];
+        }
+    }
+
+    return m3::vec4(vals[0], vals[1], vals[2], vals[3]);
+}
+
+}
+
+
+// - multiply quaternions
+
+m3::vec3 operator*(const m3::vec3 &vec, const m3::quat &quat)
+{
+    m3::quat result_quat = m3::vec3::as_quat(vec) * quat;
+
+    return m3::vec3(result_quat.i(), result_quat.j(), result_quat.k());
+}
+
+m3::vec4 operator*(const m3::vec4 &vec, const m3::quat &quat)
+{
+    m3::quat result_quat = m3::vec4::as_quat(vec) * quat;
+
+    return m3::vec4(result_quat.i(), result_quat.j(), result_quat.k(), vec.w());
+}
+
+m3::vec3 operator*(const m3::quat &quat, const m3::vec3 &vec)
+{
+    m3::quat result_quat = quat * m3::vec3::as_quat(vec);
+
+    return m3::vec3(result_quat.i(), result_quat.j(), result_quat.k());
+}
+
+m3::vec4 operator*(const m3::quat &quat, const m3::vec4 &vec)
+{
+    m3::quat result_quat = quat * m3::vec4::as_quat(vec);
+
+    return m3::vec4(result_quat.i(), result_quat.j(), result_quat.k(), vec.w());
+}

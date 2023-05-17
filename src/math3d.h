@@ -58,6 +58,9 @@ namespace m3
 
             static m3::vec3 as_vec3(const m3::vec4 &vec);
             static m3::quat as_quat(const m3::vec4 &vec);
+
+            friend m3::vec4 operator*(const m3::vec4 &vec, const m3::mat4 &mat);
+            friend m3::vec4 operator*(const m3::mat4 &mat, const m3::vec4 &vec);
     };
 
     class mat4 // row major
@@ -81,6 +84,12 @@ namespace m3
             static m3::mat4 scale_matrix(float x, float y, float z);
             static m3::mat4 change_of_basis_matrix(m3::vec3 right, m3::vec3 up, m3::vec3 forward);
             static m3::mat4 projection_matrix(float vfov_degrees, float aspect_ratio, float near, float far);
+
+            friend m3::vec4 operator*(const m3::vec4 &vec, const m3::mat4 &mat);
+            friend m3::vec4 operator*(const m3::mat4 &mat, const m3::vec4 &vec);
+            friend m3::mat4 operator*(const m3::mat4 &m0, const m3::mat4 &m1);
+            friend m3::mat4 operator*(const m3::mat4 &mat, const m3::quat &quat);
+            friend m3::mat4 operator*(const m3::quat &quat, const m3::mat4 &mat);
     };
 
     class quat
@@ -143,15 +152,49 @@ float operator*(const m3::vec4 &v0, const m3::vec4 &v1);
 m3::vec3 operator%(const m3::vec3 &v0, const m3::vec3 &v1);
 m3::vec4 operator%(const m3::vec4 &v0, const m3::vec4 &v1);
 
+
 // - multiply matrices
+
+namespace m3{ // to handle namespace problems for friend functions
+m3::vec4 operator*(const m3::vec4 &vec, const m3::mat4 &mat);
+m3::vec4 operator*(const m3::mat4 &mat, const m3::vec4 &vec);
+}
+
+
 // - multiply quaternions
+
+m3::vec3 operator*(const m3::vec3 &vec, const m3::quat &quat);
+m3::vec4 operator*(const m3::vec4 &vec, const m3::quat &quat);
+m3::vec3 operator*(const m3::quat &quat, const m3::vec3 &vec);
+m3::vec4 operator*(const m3::quat &quat, const m3::vec4 &vec);
+
+
 
 // Mat Ops
+
+
 // - multiply matrices
+
+namespace m3 { // to handle namespace problems for friend functions
+m3::mat4 operator*(const m3::mat4 &m0, const m3::mat4 &m1);
+}
+
+
 // - multiply quaternions
 
+namespace m3 {
+m3::mat4 operator*(const m3::mat4 &mat, const m3::quat &quat);
+m3::mat4 operator*(const m3::quat &quat, const m3::mat4 &mat);
+}
+
+
+
 // Quat Ops
+
+
 // - multiply quaternions
+
+m3::quat operator*(const m3::quat &q0, const m3::quat &q1);
 
 #endif // C++
 
